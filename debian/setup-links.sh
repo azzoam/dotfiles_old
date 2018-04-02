@@ -4,8 +4,6 @@ SCRIPT_DIR="$( cd "$( dirname "$0" )" && pwd )"
 BACKUP_DIR=$HOME/.settings_backups/
 BACKUP_DATETIME="$( date +"%Y%m%d_%H%M%S" )"
 
-mkdir -p $HOME/.vim
-mkdir -p $HOME/.vim/colors
 mkdir -p $BACKUP_DIR
 mkdir -p $BACKUP_DIR/$BACKUP_DATETIME
 
