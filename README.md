@@ -1,11 +1,13 @@
-# Debian Setup  
-A folder of scripts and instructions for setting up a new
-debian linux machine with settings that I enjoy.
+# Dotfiles and new machine setup
+A folder of dotfiles and scripts for setting up a new
+machine with settings that I enjoy.
 
 ## Author  
 Alexander Azzo
 
-## What it does  
+## What each file does  
+Machine specific setup scripts are located under named
+folders (eg. debian, macos, windows)  
 - `install-apps.sh`
   + installs common programs  
     * vlc  
