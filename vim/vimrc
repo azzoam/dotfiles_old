@@ -39,7 +39,7 @@ map <C-h> <c-w>h
 
 " set number lines and no visual/sound bell
 set noeb vb t_vb=
-set nu
+"set nu
 
 " allow mouse movements
 set mouse=a
