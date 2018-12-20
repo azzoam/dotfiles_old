@@ -1,0 +1,5 @@
+# bash_aliases by Alex Azzo
+
+alias ll="ls -alhG"
+alias ls="ls -G"
+alias c="clear"

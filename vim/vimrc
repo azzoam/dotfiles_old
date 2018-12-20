@@ -3,6 +3,12 @@
 " Automatic reloading of vimrc
 autocmd! bufwritepost .vimrc source %
 
+" Pathogen
+execute pathogen#infect()
+
+" Default encoding
+set encoding=utf-8
+
 " Better copy and paste
 set pastetoggle=<F2>
 set clipboard=unnamed
@@ -11,11 +17,18 @@ set clipboard=unnamed
 set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
 set autoindent smartindent
 
+" C case statement formatting
+set cinoptions=l1
+
 " Rebind <Leader> key
 let mapleader = ","
 
 " Rebind command ":" key
 nnoremap ; :
+
+" Ctags
+command! MakeTags !ctags -R .
+nnoremap <Leader>t :MakeTags<CR>
 
 " Wildmenu and status bar
 set wildmenu
@@ -36,6 +49,13 @@ map <C-j> <c-w>j
 map <C-k> <c-w>k
 map <C-l> <c-w>l
 map <C-h> <c-w>h
+set splitbelow
+set splitright
+
+" Folds
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
 
 " set number lines and no visual/sound bell
 set noeb vb t_vb=
@@ -49,18 +69,56 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Searching
+set hlsearch
+set incsearch
+nnoremap <leader>c :nohlsearch<CR>
+
 " various settings
+set path+=**
+set bs=2
 set nocompatible
+set ignorecase
+set smartcase
 set showmatch
 syntax enable
 filetype plugin indent on
 
 " Load shell base-16 colorscheme
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
+set t_Co=256
+if has("gui_running")
+    colorscheme base16-gruvbox-dark-pale
+    set guioptions-=m  "remove menu bar
+    set guioptions-=T  "remove toolbar
+    set guioptions-=r  "remove right-hand scroll bar
+    set guioptions-=L  "remove left-hand scroll barendif
+    set guifont=Monaco:h14
+    set lines=45
+    set columns=140
+else
+    if filereadable(expand("~/.vimrc_background"))
+        let base16colorspace=256
+        source ~/.vimrc_background
+    endif
 endif
 
+" Cursor Line Underline
+set cursorline
+hi clear CursorLine
+hi CursorLine  cterm=underline gui=underline
+
+" Status line options
+set statusline=
+set statusline+=\ %f
+set statusline+=%m
+set statusline+=%r
+set statusline+=\ \ %p%%
+set statusline+=\ %l/%L
+set statusline+=%=
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %y
+set statusline+=\ 
 
 
 
