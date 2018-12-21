@@ -34,6 +34,7 @@ cd ~/dotfiles
 ```
 
 **windows**  
+NOTE:  Need to run cmd.exe as administrator before running link script.
 ```
 cd %homedrive%%homepath%\dotfiles
 win32_install_links.bat
