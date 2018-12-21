@@ -74,6 +74,9 @@ set hlsearch
 set incsearch
 nnoremap <leader>c :nohlsearch<CR>
 
+" NERDTree Toggle
+nnoremap <leader><tab> :NERDTreeToggle<CR>
+
 " various settings
 set path+=**
 set bs=2
@@ -87,12 +90,16 @@ filetype plugin indent on
 " Load shell base-16 colorscheme
 set t_Co=256
 if has("gui_running")
+    if has("gui_macvim")
+        set guifont=Inconsolata:h18
+    else
+        set guifont=Inconsolata:h12
+    endif
     colorscheme base16-gruvbox-dark-pale
     set guioptions-=m  "remove menu bar
     set guioptions-=T  "remove toolbar
     set guioptions-=r  "remove right-hand scroll bar
     set guioptions-=L  "remove left-hand scroll barendif
-    set guifont=Inconsolata:h12
     set lines=45
     set columns=140
 else
