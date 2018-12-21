@@ -52,6 +52,9 @@ map <C-h> <c-w>h
 set splitbelow
 set splitright
 
+" no bold
+set t_md=
+
 " Folds
 set foldmethod=indent
 set foldlevel=99
@@ -91,11 +94,11 @@ filetype plugin indent on
 set t_Co=256
 if has("gui_running")
     if has("gui_macvim")
-        set guifont=Inconsolata:h18
+        set guifont=Inconsolata:h17
     else
         set guifont=Inconsolata:h12
     endif
-    colorscheme base16-gruvbox-dark-pale
+    colorscheme base16-gruvbox-dark-medium
     set guioptions-=m  "remove menu bar
     set guioptions-=T  "remove toolbar
     set guioptions-=r  "remove right-hand scroll bar
