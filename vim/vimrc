@@ -26,6 +26,7 @@ let mapleader = ","
 " Rebind command ":" key
 nnoremap ; :
 
+
 " Ctags
 command! MakeTags !ctags -R .
 nnoremap <Leader>t :MakeTags<CR>
@@ -115,7 +116,7 @@ endif
 " Cursor Line Underline
 set cursorline
 hi clear CursorLine
-hi CursorLine  cterm=underline gui=underline
+hi CursorLine  cterm=NONE gui=NONE ctermbg=18 guibg=#333333
 
 " Status line options
 set statusline=
