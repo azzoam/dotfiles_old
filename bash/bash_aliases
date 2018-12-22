@@ -3,3 +3,6 @@
 alias ll="ls -alhG"
 alias ls="ls -G"
 alias c="clear"
+alias tk="tmux kill-session -t "
+alias tls="tmux list-sessions"
+alias ta="tmux attach -t "
