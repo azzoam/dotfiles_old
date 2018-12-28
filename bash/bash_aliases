@@ -1,7 +1,7 @@
 # bash_aliases by Alex Azzo
 
-alias ll="ls -alhG"
-alias ls="ls -G"
+alias ll="ls -alhG --color"
+alias ls="ls -G --color"
 alias c="clear"
 alias tk="tmux kill-session -t "
 alias tls="tmux list-sessions"
